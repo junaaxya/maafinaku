@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maafin aku ya!</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .text {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        #image-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .tombol {
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius:10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #Bn, #By {
+            position: relative;
+            margin: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .tombol {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            #Bn, #By {
+                margin: 5px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        let flag = 1;
+
+        function f1() {
+            const phoneNumber = '+6281272919054'; // Ganti dengan nomor telepon tujuan
+            const message = 'iyaa aku maafin';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.location.href = url;
+            
+        }
+
+        function f() {
+            const Bn = document.getElementById('Bn');
+            if (flag === 1) {
+                Bn.style.top = '50px';
+                Bn.style.left = '-90px';
+                flag = 2;
+            } else if (flag === 2) {
+                Bn.style.top = '-10px';
+                Bn.style.left = '80px';
+                flag = 3;
+            } else if (flag === 3) {
+                Bn.style.top = '30px';
+                Bn.style.left = '50px';
+                flag = 1;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 class="text">MAAFIN AKU YA!</h1>
+
+    <div id="image-container">
+        <img alt="hati" src="https://bit.ly/3AC63BR" height="60" />
+    </div>
+
+    <h1 class="text">veyiin mau maafin aku kan ? </h1>
+
+    <div class="buttons">
+        <div id="By">
+            <input class="tombol" type="button" value="YA" onClick="f1()" />
+        </div>
+
+        <div id="Bn">
+            <input class="tombol" type="button" value="TIDAK" onMouseOver="f()" />
+        </div>
+    </div>
+</body>
+</html>
